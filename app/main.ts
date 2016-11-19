@@ -15,6 +15,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
         <h3 *ngIf="race.isRacing" >Already Racing</h3>
       </li>
     </ul>
+    <h2>Total cost: {{ totalCost() | currency:'USD':true }}</h2>
   `
 })
 class AppComponent {
@@ -42,6 +43,12 @@ class AppComponent {
     "entryFee": 4300,
     "isRacing": false
   }]
+
+  totalCost() {
+    return this.races
+      .filter(race => race.isRacing)
+      .reduce((prev, next) => prev + next.entryFee, 0);
+  }
 }
 
 @NgModule({
