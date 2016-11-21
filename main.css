@@ -1,0 +1,23 @@
+html {
+  height: 100%;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(#0d263c,#030714) no-repeat fixed;
+  color: #ffffff;
+  height: 100%;
+  margin: 20px;
+}
+
+h1 {
+  color: #66d9f7;
+}
+
+button {
+  background: #fd79fc;
+  border-radius: 3px;
+  border: 0;
+  color: #ffffff;
+  width: 120px;
+}
