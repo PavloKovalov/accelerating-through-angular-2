@@ -5,6 +5,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppComponent } from './app.component';
 import { RacesComponent } from './races.component';
+import { RaceService } from './race.service';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { RacesComponent } from './races.component';
     AppComponent,
     RacesComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [ RaceService ]
 })
 class AppModule {}
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Race } from './race';
+import { RaceService } from './race.service';
 import { RACES } from './mocks';
 
 @Component({
@@ -11,8 +12,10 @@ export class RacesComponent {
   races: Race[]
   cash = 10000;
 
+  constructor(private racingDataService: RaceService) { }
+
   ngOnInit() {
-      this.races = RACES;
+      this.races = this.racingDataService.getRaces();
   }
 
   totalCost() {
