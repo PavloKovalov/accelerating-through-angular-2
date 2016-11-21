@@ -9,19 +9,22 @@ import { RACES } from './mocks';
     styleUrls: ['app/races.component.css']
 }) 
 export class RacesComponent {
-  races: Race[]
+  races: Race[] = [];
   cash = 10000;
 
   constructor(private racingDataService: RaceService) { }
 
   ngOnInit() {
-      this.races = this.racingDataService.getRaces();
+      this.racingDataService.getRaces()
+        .subscribe(races => this.races = races);
   }
 
   totalCost() {
-    return this.races
-      .filter(race => race.isRacing)
-      .reduce((prev, next) => prev + next.entryFee, 0);
+    if (Array.isArray(this.races)) {
+        return this.races
+            .filter(race => race.isRacing)
+            .reduce((prev, next) => prev + next.entryFee, 0);
+    }
   }
 
   cashLeft() {
