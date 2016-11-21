@@ -24,4 +24,16 @@ export class RacesComponent {
   cashLeft() {
     return this.cash - this.totalCost();
   }
+
+  cancelRace(race) {
+      race.isRacing = false;
+  }
+
+  enterRace(race) {
+      if (race.entryFee > this.cashLeft()) {
+        alert('You don\'t have enough cash');
+        return;
+      }
+      race.isRacing = true;
+  }
 }
