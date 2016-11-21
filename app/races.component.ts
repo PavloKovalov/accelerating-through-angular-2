@@ -9,6 +9,7 @@ import { RACES } from './mocks';
 }) 
 export class RacesComponent {
   races: Race[]
+  cash = 10000;
 
   ngOnInit() {
       this.races = RACES;
@@ -18,5 +19,9 @@ export class RacesComponent {
     return this.races
       .filter(race => race.isRacing)
       .reduce((prev, next) => prev + next.entryFee, 0);
+  }
+
+  cashLeft() {
+    return this.cash - this.totalCost();
   }
 }
