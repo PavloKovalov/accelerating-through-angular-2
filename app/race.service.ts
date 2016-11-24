@@ -11,7 +11,7 @@ export class RaceService {
 
     getRaces() {
         return this.http
-            .get('races.json')
+            .get('assets/races.json')
             .map(response => <Race[]>response.json().racesData);
     }
 }

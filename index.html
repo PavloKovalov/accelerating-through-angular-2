@@ -4,21 +4,21 @@
         <title>Ultra Racing Schedule</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="normalize.css">
-        <link rel="stylesheet" href="main.css">
-        <!-- 1. Load libraries -->
-        <!-- Polyfill for older browsers -->
-        <script src="node_modules/core-js/client/shim.min.js"></script>
-        <script src="node_modules/zone.js/dist/zone.js"></script>
-        <script src="node_modules/reflect-metadata/Reflect.js"></script>
+        <link rel="stylesheet" href="assets/normalize.css">
+        <link rel="stylesheet" href="assets/main.css">
+        <!-- build:vendor -->
         <script src="node_modules/systemjs/dist/system.src.js"></script>
-        <!-- 2. Configure SystemJS -->
         <script src="systemjs.config.js"></script>
-        <script>
-        System.import('app').catch(function(err){ console.error(err); });
-        </script>
+        <!-- endbuild -->
     </head>
     <body>
-        <racing-app>Loading...</my-app>
+        <racing-app>Reticulating Splines...</my-app>
+        <!-- build:app -->
+        <script>
+        System.import('app/vendor').then(function(){
+          System.import('app').catch(function(err){ console.error(err); });
+        });
+        </script>
+        <!-- endbuild -->
     </body>
 </html>

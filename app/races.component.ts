@@ -5,9 +5,11 @@ import { RACES } from './mocks';
 
 @Component({
     selector: 'races',
-    templateUrl: 'app/races.component.html',
-    styleUrls: ['app/races.component.css']
-}) 
+    styles: [
+      require('./races.component.css!text')
+    ],
+    template: require('./races.component.html!text')
+})
 export class RacesComponent {
   races: Race[] = [];
   cash = 10000;
